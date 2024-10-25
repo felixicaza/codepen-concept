@@ -74,7 +74,7 @@
     "@commitlint/config-conventional": "19.5.0",
     "@ianvs/prettier-plugin-sort-imports": "4.3.1",
     "@ls-lint/ls-lint": "2.2.3",
-    "@typescript-eslint/eslint-plugin": "7.0.1",
+    "@typescript-eslint/eslint-plugin": "8.11.0",
     "@typescript-eslint/parser": "7.0.0",
     "astro-eslint-parser": "1.0.3",
     "eslint": "8.57.0",
