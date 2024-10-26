@@ -40,7 +40,7 @@ Si quieres utilizar la plantilla de [refactor.md][refactor-template], deberás a
 
 Puedes ver todas las plantillas disponibles en el siguiente enlace, asegurándote de utilizar la plantilla correcta:
 
-https://github.com/UXCorpRangel/boilerplate/tree/main/.github/PULL_REQUEST_TEMPLATE
+https://github.com/felixicaza/codepen-concept/tree/main/.github/PULL_REQUEST_TEMPLATE
 
 Esta es una limitación de GitHub que no permite utilizar plantillas de PR en los Pull Requests desde la interfaz web (como lo indica en el punto número 3 de la documentación de GitHub sobre plantillas de PR).
 

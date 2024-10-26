@@ -1,27 +1,26 @@
 {
-  "name": "boilerplate",
+  "name": "codepen-concept",
   "version": "1.0.0",
   "private": true,
-  "description": "Boilerplate que incluye integraciones y configuraciones enfocadas en buenas prácticas para construir sitios rápidos, accesibles y listos para producción.",
+  "description": "Este repositorio contiene el desarrollo del diseño experimental de Codepen, creado por BlurSoul.",
   "keywords": [
     "astro",
-    "astrojs",
-    "astro-boilerplate",
-    "astro-template",
-    "boilerplate",
-    "starter",
-    "starter-template",
-    "template"
+    "design",
+    "html",
+    "css",
+    "ui-design",
+    "codepen",
+    "redesign"
   ],
   "bugs": {
-    "url": "https://github.com/UXCorpRangel/boilerplate/issues"
+    "url": "https://github.com/felixicaza/codepen-concept/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/UXCorpRangel/boilerplate.git"
+    "url": "https://github.com/felixicaza/codepen-concept.git"
   },
   "license": "MIT",
-  "author": "UXCorpRangel - Felix Icaza <fx.joliett17@gmail.com>",
+  "author": "Felix Icaza <fx.joliett17@gmail.com>",
   "type": "module",
   "scripts": {
     "astro": "astro",

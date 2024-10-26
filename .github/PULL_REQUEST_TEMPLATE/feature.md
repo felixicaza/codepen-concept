@@ -56,9 +56,7 @@ Antes de enviar esta Pull Request, he verificado lo siguiente:
 - [ ] La nueva feature no afecta negativamente la funcionalidad existente.
 - [ ] Mi PR está vinculada a un issue.
 - [ ] Todas las pruebas relevantes han sido ejecutadas y pasadas (si aplica).
-- [ ] Acepto que mi PR se alinea con el [Código de Conducta de UXCorpRangel][codigo-de-conducta].
 
 Agradezco su tiempo y revisión. Estoy abierto/a a cualquier comentario o sugerencia que puedan tener para mejorar esta nueva feature. ¡Espero que esta adición sea útil para el proyecto! 😄
 
-[issue]: https://github.com/UXCorpRangel/boilerplate/issues/new
-[codigo-de-conducta]: https://github.com/UXCorpRangel/.github/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/felixicaza/codepen-concept/issues/new

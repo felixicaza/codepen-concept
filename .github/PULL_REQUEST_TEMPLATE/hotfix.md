@@ -56,9 +56,7 @@ Antes de enviar la Pull Request, asegúrate de haber completado este checklist:
 - [ ] El hotfix está enfocado únicamente en resolver el problema crítico.
 - [ ] Mi PR está vinculada correctamente a un issue o ticket de urgencia.
 - [ ] Todas las pruebas relevantes han sido ejecutadas y pasadas (si aplica).
-- [ ] Acepto que mi PR se alinea con el [Código de Conducta de UXCorpRangel][codigo-de-conducta].
 
 Agradezco su pronta revisión y colaboración en este hotfix. Estoy disponible para cualquier comentario o ajuste necesario para que el hotfix sea implementado rápidamente. ¡Gracias por su apoyo! 😄
 
-[issue]: https://github.com/UXCorpRangel/boilerplate/issues/new
-[codigo-de-conducta]: https://github.com/UXCorpRangel/.github/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/felixicaza/codepen-concept/issues/new

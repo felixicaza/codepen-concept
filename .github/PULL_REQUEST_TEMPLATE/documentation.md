@@ -43,9 +43,7 @@ Revisa los siguientes puntos antes de enviar la PR:
 - [ ] Se ha comprobado que todos los enlaces y referencias dentro de la documentación sean correctos y funcionen.
 - [ ] La documentación está actualizada y clara para nuevos colaboradores o usuarios del proyecto.
 - [ ] Los cambios realizados son precisos y reflejan correctamente las funcionalidades actuales del proyecto (si aplica).
-- [ ] Acepto que mi PR se alinea con el [Código de Conducta de UXCorpRangel][codigo-de-conducta].
 
 Agradezco de antemano la revisión de esta actualización. Estoy abierto/a a cualquier sugerencia para mejorar la claridad o el formato de la documentación. 😄
 
-[issue]: https://github.com/UXCorpRangel/boilerplate/issues/new
-[codigo-de-conducta]: https://github.com/UXCorpRangel/.github/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/felixicaza/codepen-concept/issues/new

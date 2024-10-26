@@ -67,9 +67,7 @@ Antes de enviar esta Pull Request, asegúrate de cumplir con lo siguiente:
 - [ ] Se ha revisado que el comportamiento actual del proyecto no haya sido alterado negativamente.
 - [ ] Mi PR está vinculada a un issue.
 - [ ] Todas las pruebas relevantes han sido ejecutadas y pasadas (si aplica).
-- [ ] Acepto que mi PR se alinea con el [Código de Conducta de UXCorpRangel][codigo-de-conducta].
 
 Me gustaría recibir feedback sobre la estructura del refactor para ver si se puede optimizar aún más. ¡Gracias por su tiempo y revisión!\_ 😄
 
-[issue]: https://github.com/UXCorpRangel/boilerplate/issues/new
-[codigo-de-conducta]: https://github.com/UXCorpRangel/.github/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/felixicaza/codepen-concept/issues/new

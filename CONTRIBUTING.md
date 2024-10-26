@@ -1,4 +1,4 @@
-# Contribuyendo a esta plantilla
+# Contribuyendo a Codepen Concept Design
 
 ¡Gracias por tu interés en contribuir! Para garantizar una colaboración fluida y eficiente, por favor sigue estas directrices.
 
@@ -17,7 +17,7 @@
 ## ¿Cómo contribuir?
 
 1. **Explora el Proyecto**: Revisa el [README](./README.md), la estructura y el código para entender el proyecto.
-2. **Revisa Issues Abiertos**: Consulta la [sección de Issues](https://github.com/UXCorpRangel/boilerplate/issues) para ver cómo puedes ayudar o deja una issue para sugerir una nueva característica o error.
+2. **Revisa Issues Abiertos**: Consulta la [sección de Issues](https://github.com/felixicaza/codepen-concept/issues) para ver cómo puedes ayudar o deja una issue para sugerir una nueva característica o error.
 3. **Fork y Clona**: Haz un fork del repositorio y clónalo en tu máquina local.
 
 ## Código de conducta
@@ -29,25 +29,25 @@ Nos comprometemos a mantener un ambiente de colaboración respetuoso y acogedor.
 Si encuentras un error o problema:
 
 1. **Busca en Issues**: Verifica si el problema ya ha sido reportado.
-2. **Crea un Nuevo Issue**: Si el problema es nuevo, abre un issue en la [sección de Issues](https://github.com/UXCorpRangel/boilerplate/issues) con una descripción clara y concisa del problema.
+2. **Crea un Nuevo Issue**: Si el problema es nuevo, abre un issue en la [sección de Issues](https://github.com/felixicaza/codepen-concept/issues) con una descripción clara y concisa del problema.
 
 ## ¿Cómo proponer nuevas características?
 
 Para proponer una nueva característica:
 
-1. **Abre un Issue**: Antes de comenzar a trabajar en la nueva característica, abre un nuevo issue para discutir la idea en la [sección de Issues](https://github.com/UXCorpRangel/boilerplate/issues).
+1. **Abre un Issue**: Antes de comenzar a trabajar en la nueva característica, abre un nuevo issue para discutir la idea en la [sección de Issues](https://github.com/felixicaza/codepen-concept/issues).
 2. **Recibe Retroalimentación**: Espera comentarios y sugerencias de los colaboradores o mantenedores antes de proceder.
 
 ## ¿Cómo hacer un fork?
 
-Para contribuir a Portfolios Dev, primero necesitas hacer un fork del repositorio:
+Para contribuir a Codepen Concept, primero necesitas hacer un fork del repositorio:
 
-1. **Ve al Repositorio en GitHub**: Accede a [Portfolios Dev en GitHub](https://github.com/UXCorpRangel/boilerplate).
+1. **Ve al Repositorio en GitHub**: Accede a [Codepen Concept en GitHub](https://github.com/felixicaza/codepen-concept).
 2. **Haz un Fork**: En la esquina superior derecha de la página del repositorio, haz clic en el botón **Fork**. Esto creará una copia del repositorio en tu cuenta de GitHub.
 3. **Clona tu Fork**: Abre una terminal en tu máquina local y usa el siguiente comando para clonar tu fork:
 
 ```bash
-git clone https://github.com/TU_USUARIO/boilerplate.git
+git clone https://github.com/TU_USUARIO/codepen-concept.git
 ```
 
 ## ¿Cómo enviar un pull request?
@@ -71,8 +71,8 @@ Para asegurar que tu issue sea procesado de manera eficiente:
 
 ## Licencia
 
-Al contribuir a Portfolios Dev, aceptas que tus contribuciones estén sujetas a la [Licencia del Proyecto](./LICENSE).
+Al contribuir a Codepen Concept, aceptas que tus contribuciones estén sujetas a la [Licencia del Proyecto](./LICENSE).
 
 ---
 
-Gracias por tu interés y tu contribución a Portfolios Dev. ¡Tu ayuda es muy valiosa!
+Gracias por tu interés y tu contribución a Codepen Concept. ¡Tu ayuda es muy valiosa!

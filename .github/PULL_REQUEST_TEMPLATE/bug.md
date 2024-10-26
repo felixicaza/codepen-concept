@@ -54,9 +54,7 @@ Antes de enviar la Pull Request, asegúrate de completar el siguiente checklist:
 - [ ] Mi solución no rompe ninguna funcionalidad existente.
 - [ ] Mi PR está vinculada correctamente a un issue.
 - [ ] Todas las pruebas relevantes han sido ejecutadas y pasadas (si aplica).
-- [ ] Acepto que mi PR se alinea con el [Código de Conducta de UXCorpRangel][codigo-de-conducta].
 
 ¡Gracias por su tiempo al revisar esta PR! Estoy abierto/a a cualquier sugerencia o mejora adicional. 😄
 
-[issue]: https://github.com/UXCorpRangel/boilerplate/issues/new
-[codigo-de-conducta]: https://github.com/UXCorpRangel/.github/blob/main/CODE_OF_CONDUCT.md
+[issue]: https://github.com/felixicaza/codepen-concept/issues/new
