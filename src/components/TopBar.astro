@@ -1,0 +1,48 @@
+<div class="topbar">
+  <div class="logo-cont">
+    <img src="/svg/logo.svg" alt="codepen logo" />
+    <p>Codepen</p>
+  </div>
+  <div class="content">
+    <p class="">Quadrants CSS Design</p>
+    <img src="/svg/pencil.svg" alt="pencil edit" />
+  </div>
+
+  <div class="window-option">
+    <img src="/svg/min.svg" alt="" />
+    <img src="/svg/size.svg" alt="" />
+    <img src="/svg/close.svg" alt="" />
+  </div>
+</div>
+<style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+
+    & .logo-cont {
+      display: flex;
+
+      & p {
+        padding-inline-start: 0.5rem;
+      }
+    }
+
+    & .window-option {
+      img {
+        padding-inline-start: 2.5rem;
+      }
+
+      img:first-child {
+        padding-inline-end: 0;
+      }
+    }
+
+    & .content {
+      display: flex;
+      gap: 0.5rem;
+      padding-inline-start: 5rem;
+    }
+  }
+</style>
