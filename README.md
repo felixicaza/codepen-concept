@@ -23,21 +23,25 @@ https://dribbble.com/shots/25090422-Codepen-Concept-Design
 ## ⬇️ Instalación
 
 1. Clona el repositorio:
+
 ```bash
 git clone https://github.com/felixicaza/codepen-concept.git
 ```
 
 2. Navega al directorio del proyecto:
+
 ```bash
 cd codepen-concept
 ```
 
 3. Instala las dependencias:
+
 ```bash
 pnpm install
 ```
 
 4. Inicia el servidor de desarrollo:
+
 ```bash
 pnpm run dev
 ```
@@ -54,4 +58,4 @@ Este proyecto utiliza la Licencia MIT. Consulte el [Archivo de Licencia](./LICEN
 
 ---
 
-Desarrollado por [Felix Icaza](https://felixicaza.com). Diseño por [BlurSoul](https://dribbble.com/BlurSoul).
+Desarrollado por [Felix Icaza](https://felixicaza.com). Diseñado por [BlurSoul](https://dribbble.com/BlurSoul).
