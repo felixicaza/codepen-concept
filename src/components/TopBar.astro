@@ -1,17 +1,21 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
 <div class="topbar">
   <div class="logo-cont">
-    <img src="/svg/logo.svg" alt="codepen logo" />
+    <Icon name="logo" size={24} />
     <p>Codepen</p>
   </div>
   <div class="content">
-    <p class="">Quadrants CSS Design</p>
-    <img src="/svg/pencil.svg" alt="pencil edit" />
+    <p>Quadrants CSS Design</p>
+    <Icon name="pencil" size={24} />
   </div>
 
   <div class="window-option">
-    <img src="/svg/min.svg" alt="" />
-    <img src="/svg/size.svg" alt="" />
-    <img src="/svg/close.svg" alt="" />
+    <Icon name="min" size={24} />
+    <Icon name="size" size={24} />
+    <Icon name="close" size={24} />
   </div>
 </div>
 <style>
@@ -23,6 +27,7 @@
 
     & .logo-cont {
       display: flex;
+      align-items: center;
 
       & p {
         padding-inline-start: 0.5rem;
@@ -30,19 +35,15 @@
     }
 
     & .window-option {
-      img {
-        padding-inline-start: 2.5rem;
-      }
-
-      img:first-child {
-        padding-inline-end: 0;
-      }
+      display: flex;
+      gap: 1rem;
     }
 
     & .content {
       display: flex;
       gap: 0.5rem;
       padding-inline-start: 5rem;
+      align-items: center;
     }
   }
 </style>
