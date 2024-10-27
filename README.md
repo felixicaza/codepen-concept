@@ -58,4 +58,4 @@ Este proyecto utiliza la Licencia MIT. Consulte el [Archivo de Licencia](./LICEN
 
 ---
 
-Desarrollado por [Felix Icaza](https://felixicaza.com). Diseñado por [BlurSoul](https://dribbble.com/BlurSoul).
+Desarrollado por [Felix Icaza](https://felixicaza.com) y [Miguel Colmenarez](https://github.com/colmedev). Diseñado por [BlurSoul](https://dribbble.com/BlurSoul).
