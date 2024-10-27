@@ -1,5 +1,6 @@
 ---
 import type { Options } from '@contracts'
+import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'
 import { Schema } from 'astro-seo-schema'
 import Favicons from '@components/Favicons.astro'
 import 'sanitize.css'
@@ -7,6 +8,7 @@ import 'sanitize.css/forms.css'
 import 'sanitize.css/assets.css'
 import 'sanitize.css/typography.css'
 import 'sanitize.css/reduce-motion.css'
+import '@fontsource-variable/montserrat'
 
 interface Props {
   options: Options
@@ -27,6 +29,15 @@ const { title, description, metaRobots } = options
     <slot name="preconnect" />
 
     <slot name="async-script" />
+
+    <link
+      rel="preload"
+      as="font"
+      crossorigin="anonymous"
+      href={montserrat}
+      type="font/woff2"
+      fetchpriority="high"
+    />
 
     <!-- Critical CSS -->
     <style is:inline>
@@ -50,6 +61,10 @@ const { title, description, metaRobots } = options
 
       @view-transition {
         navigation: auto;
+      }
+
+      body {
+        font-family: 'Montserrat Variable', sans-serif;
       }
 
       body::-webkit-scrollbar {
