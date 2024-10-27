@@ -3,47 +3,96 @@ import { Icon } from 'astro-icon/components'
 ---
 
 <div class="topbar">
-  <div class="logo-cont">
-    <Icon name="logo" size={24} />
-    <p>Codepen</p>
+  <a href="/" class="logo">
+    <span>
+      <Icon name="logo" size={20} />
+    </span>
+    <span class="text">Codepen</span>
+  </a>
+  <div class="title">
+    <span class="text" contenteditable>Quadrants CSS Design</span>
+    <span class="icon">
+      <Icon name="pencil" size={16} />
+    </span>
   </div>
-  <div class="content">
-    <p>Quadrants CSS Design</p>
-    <Icon name="pencil" size={24} />
-  </div>
-
-  <div class="window-option">
-    <Icon name="min" size={24} />
-    <Icon name="size" size={24} />
-    <Icon name="close" size={24} />
+  <div class="window-buttons">
+    <button type="button">
+      <Icon name="min" size={14.25} />
+    </button>
+    <button type="button">
+      <Icon name="size" size={14.25} />
+    </button>
+    <button type="button">
+      <Icon name="close" size={14.25} />
+    </button>
   </div>
 </div>
+
 <style>
   .topbar {
+    --bg-gradient: linear-gradient(#fafafa 10%, #888 90%);
+
+    background: #111;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-inline: 1rem;
+    padding: 14px 24px;
 
-    & .logo-cont {
+    & .logo {
       display: flex;
       align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      text-decoration: none;
 
-      & p {
-        padding-inline-start: 0.5rem;
+      & .text {
+        background: var(--bg-gradient);
+        color: transparent;
+        background-clip: text;
+        font-size: 20px;
       }
     }
 
-    & .window-option {
+    & .title {
       display: flex;
-      gap: 1rem;
+      flex-wrap: nowrap;
+      align-items: center;
+      gap: 20px;
+      font-weight: 500;
+      width: fit-content;
+
+      & .text {
+        font-size: 20px;
+        background: var(--bg-gradient);
+        color: transparent;
+        background-clip: text;
+        white-space: nowrap;
+        cursor: text;
+        padding-inline: 2px;
+        border-radius: 4px;
+
+        &:focus-within {
+          outline: 2px solid #222;
+        }
+      }
+
+      & .icon {
+        cursor: pointer;
+      }
     }
 
-    & .content {
+    & .window-buttons {
       display: flex;
-      gap: 0.5rem;
-      padding-inline-start: 5rem;
       align-items: center;
+      gap: 48px;
+
+      & button {
+        background: none;
+        border: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+      }
     }
   }
 </style>
