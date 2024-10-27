@@ -38,6 +38,13 @@ const { title, description, metaRobots } = options
       type="font/woff2"
       fetchpriority="high"
     />
+    <link
+      rel="preload"
+      as="image"
+      href="/images/background.png"
+      type="image/png"
+      fetchpriority="high"
+    />
 
     <!-- Critical CSS -->
     <style is:inline>
@@ -63,8 +70,25 @@ const { title, description, metaRobots } = options
         navigation: auto;
       }
 
+      html,
+      body {
+        height: 100vh;
+        overflow: hidden;
+      }
+
       body {
         font-family: 'Montserrat Variable', sans-serif;
+        background: #0a0a0a;
+        position: relative;
+
+        &::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: url('/images/background.png');
+          opacity: 0.034;
+          z-index: -1;
+        }
       }
 
       body::-webkit-scrollbar {
@@ -166,7 +190,6 @@ const { title, description, metaRobots } = options
 
     <Favicons />
 
-    <meta name="color-scheme" content="dark light" />
     <meta name="theme-color" content="#ee2525" />
 
     <slot name="social-media" />
