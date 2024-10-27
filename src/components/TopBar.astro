@@ -1,0 +1,49 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="topbar">
+  <div class="logo-cont">
+    <Icon name="logo" size={24} />
+    <p>Codepen</p>
+  </div>
+  <div class="content">
+    <p>Quadrants CSS Design</p>
+    <Icon name="pencil" size={24} />
+  </div>
+
+  <div class="window-option">
+    <Icon name="min" size={24} />
+    <Icon name="size" size={24} />
+    <Icon name="close" size={24} />
+  </div>
+</div>
+<style>
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 1rem;
+
+    & .logo-cont {
+      display: flex;
+      align-items: center;
+
+      & p {
+        padding-inline-start: 0.5rem;
+      }
+    }
+
+    & .window-option {
+      display: flex;
+      gap: 1rem;
+    }
+
+    & .content {
+      display: flex;
+      gap: 0.5rem;
+      padding-inline-start: 5rem;
+      align-items: center;
+    }
+  }
+</style>
