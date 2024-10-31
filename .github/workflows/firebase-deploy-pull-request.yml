@@ -45,6 +45,6 @@ jobs:
               channelId: "preview"
               expires: 5h
               projectId: codepen-concept
-              env:
-                 FIREBASE_CLI_PREVIEWS: hostingchannels
-                 FIREBASE_CLI_EXPERIMENTS: webframeworks
+           env:
+              FIREBASE_CLI_PREVIEWS: hostingchannels
+              FIREBASE_CLI_EXPERIMENTS: webframeworks
