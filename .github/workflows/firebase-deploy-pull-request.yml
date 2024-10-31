@@ -11,7 +11,7 @@ jobs:
    build_and_preview:
       if: |
          github.event_name == 'pull_request' &&
-         !contains(fromJSON('["' + toJSON(github.event.pull_request.title) + '"]')[0], 'bump')
+         !contains(github.event.pull_request.title, 'bump')
 
       runs-on: ubuntu-latest
 
