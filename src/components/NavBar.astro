@@ -1,0 +1,34 @@
+---
+import Button from './ui/Button.astro'
+---
+
+<div class="nav-cont">
+  <div class="home">
+    <Button icon="home" />
+  </div>
+  <div class="bar-options">
+    <Button icon="gear" />
+    <Button icon="console" />
+    <Button icon="cloud" />
+    <Button icon="library" />
+    <Button icon="more" />
+  </div>
+
+  <div class="blur-logo">
+    <img src="/images/logo-blur.png" alt="Logo de Blur" />
+  </div>
+</div>
+<style>
+  .nav-cont {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: space-between;
+    padding: 1rem;
+
+    .bar-options {
+      display: flex;
+      gap: 0.5rem;
+    }
+  }
+</style>
