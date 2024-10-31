@@ -10,8 +10,8 @@ permissions:
 jobs:
    build_and_preview:
       if: |
-         github.event.pull_request.head.repo.full_name == github.repository &&
-         !contains(github.event.pull_request.title, 'bump')
+         github.event_name == 'pull_request' &&
+         !contains(fromJSON('["' + toJSON(github.event.pull_request.title) + '"]')[0], 'bump')
 
       runs-on: ubuntu-latest
 
