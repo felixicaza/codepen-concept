@@ -1,6 +1,8 @@
 name: Deploy to Firebase Hosting Preview on Pull Request
 
-"on": pull_request
+"on":
+   pull_request:
+      types: [opened, synchronize, reopened]
 
 permissions:
    checks: write
@@ -9,10 +11,7 @@ permissions:
 
 jobs:
    build_and_preview:
-      if: |
-         github.event_name == 'pull_request' &&
-         !contains(github.event.pull_request.title, 'bump')
-
+      if: github.event_name == 'pull_request' && !contains(github.event.pull_request.title, 'bump')
       runs-on: ubuntu-latest
 
       strategy:
@@ -46,6 +45,6 @@ jobs:
               channelId: "preview"
               expires: 5h
               projectId: codepen-concept
-           env:
-              FIREBASE_CLI_PREVIEWS: hostingchannels
-              FIREBASE_CLI_EXPERIMENTS: webframeworks
+              env:
+                 FIREBASE_CLI_PREVIEWS: hostingchannels
+                 FIREBASE_CLI_EXPERIMENTS: webframeworks
