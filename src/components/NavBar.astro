@@ -1,12 +1,13 @@
 ---
-import Button from './ui/Button.astro'
+import avatar from '@images/avatar.png'
+import Button from '@ui/Button.astro'
+import { Picture } from 'astro:assets'
 ---
 
-<div class="nav-cont">
-  <div class="home">
-    <Button icon="home" />
-  </div>
-  <div class="bar-options">
+<nav>
+  <Button icon="home" />
+
+  <div>
     <Button icon="gear" />
     <Button icon="console" />
     <Button icon="cloud" />
@@ -14,21 +15,32 @@ import Button from './ui/Button.astro'
     <Button icon="more" />
   </div>
 
-  <div class="blur-logo">
-    <img src="/images/logo-blur.png" alt="Logo de Blur" />
-  </div>
-</div>
+  <a href="/">
+    <Picture
+      src={avatar}
+      alt="Logo del usuario"
+      width={56}
+      height={56}
+      formats={['avif', 'webp']}
+      fetchpriority="high"
+      loading="eager"
+    />
+  </a>
+</nav>
+
 <style>
-  .nav-cont {
+  nav {
     display: flex;
     align-items: center;
-    gap: 1rem;
     justify-content: space-between;
-    padding: 1rem;
+    max-width: 1856px;
+    margin-inline: auto;
+    padding-top: 32px;
 
-    .bar-options {
+    div {
       display: flex;
-      gap: 0.5rem;
+      align-items: center;
+      gap: 32px;
     }
   }
 </style>
