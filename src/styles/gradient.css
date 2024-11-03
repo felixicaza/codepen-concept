@@ -1,0 +1,59 @@
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 140deg;
+  inherits: false;
+}
+
+.gradient {
+  --gradient: linear-gradient(
+    var(--angle),
+    #47cf73 0%,
+    #ffdd40 25%,
+    #ae63e4 50%,
+    #0ebeff 75%,
+    #47cf73 100%
+  );
+
+  background:
+    linear-gradient(to top, #111, #333) padding-box,
+    transparent border-box;
+  position: relative;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background 300ms ease;
+  will-change: background;
+
+  &::before {
+    content: '';
+    background-image: var(--gradient);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    z-index: -1;
+    filter: blur(16px);
+    opacity: 0;
+    transition: opacity 300ms ease;
+  }
+
+  &:hover {
+    background:
+      linear-gradient(to top, #111, #333) padding-box,
+      var(--gradient) border-box;
+    animation: rotate 8s linear infinite;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 500deg;
+  }
+}

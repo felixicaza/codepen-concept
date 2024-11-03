@@ -2,6 +2,7 @@
 import avatar from '@images/avatar.png'
 import Button from '@ui/Button.astro'
 import { Picture } from 'astro:assets'
+import '@styles/gradient.css'
 ---
 
 <nav>
@@ -15,7 +16,7 @@ import { Picture } from 'astro:assets'
     <Button icon="more" />
   </div>
 
-  <a href="/">
+  <a class="gradient" href="/">
     <Picture
       src={avatar}
       alt="Logo del usuario"
