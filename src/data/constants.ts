@@ -1,1 +1,1 @@
-export const URL = 'https://uxcorprangel.github.io'
+export const URL = 'https://codepen-concept.web.app'
