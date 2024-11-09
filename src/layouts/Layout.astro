@@ -1,8 +1,6 @@
 ---
 import type { Options } from '@contracts'
 import Base from '@layouts/Base.astro'
-import Navbar from '@components/Navbar.astro'
-import Topbar from '@components/Topbar.astro'
 
 interface Props {
   options: Options
@@ -12,7 +10,5 @@ const { options } = Astro.props
 ---
 
 <Base options={options}>
-  <Topbar />
-  <Navbar />
   <slot />
 </Base>
