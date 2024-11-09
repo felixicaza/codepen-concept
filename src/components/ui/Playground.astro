@@ -1,0 +1,132 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<section>
+  <div class="code-container">
+    <div class="tools-container">
+      <div class="code-tools">
+        <button type="button">
+          <Icon name="container/html" size={20} />
+        </button>
+        <button type="button">
+          <Icon name="container/css" size={20} />
+        </button>
+        <button type="button">
+          <Icon name="container/javascript" size={20} />
+        </button>
+      </div>
+      <div class="options-tools">
+        <button type="button">
+          <Icon name="container/settings" size={16} />
+        </button>
+        <button type="button">
+          <Icon name="container/options" width={18} height={4} />
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="preview-container">
+    <button type="button">
+      <Icon name="container/toolbar-options" width={28} height={6} />
+    </button>
+  </div>
+</section>
+
+<style>
+  section {
+    width: 100%;
+    height: 100%;
+    max-width: 1856px;
+    margin-inline: auto;
+    background-color: #1a1a1a;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 0.7fr 1fr;
+    gap: 16px;
+    padding: 16px;
+
+    .code-container {
+      background-color: #0a0a0a;
+      border-radius: 16px;
+      padding: 24px 24px 21px 24px;
+
+      .tools-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .code-tools {
+          display: flex;
+          align-items: center;
+          gap: 24px;
+
+          button {
+            --size: 48px;
+
+            background: linear-gradient(to top, #111, #333);
+            border: none;
+            cursor: pointer;
+            display: grid;
+            place-items: center;
+            padding: 0;
+            width: var(--size);
+            height: var(--size);
+            border-radius: 8px;
+            transition:
+              background,
+              box-shadow 300ms ease;
+            will-change: background, box-shadow;
+
+            &:hover {
+              background: linear-gradient(to top, #33a9dc, #33a9dc);
+              box-shadow: 0 0 20px #33a9dc;
+            }
+          }
+        }
+
+        .options-tools {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          button {
+            --size: 32px;
+
+            width: var(--size);
+            height: var(--size);
+            display: grid;
+            place-items: center;
+            border: none;
+            cursor: pointer;
+            padding: 0px;
+          }
+        }
+      }
+    }
+
+    .preview-container {
+      position: relative;
+      background: #0a0a0a;
+      border-radius: 16px;
+
+      button {
+        --size: 48px;
+
+        background: #0a0a0a;
+        border: none;
+        padding: 0;
+        display: grid;
+        place-items: center;
+        border-radius: 8px;
+        cursor: pointer;
+        width: var(--size);
+        height: var(--size);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        translate: -21px -24px;
+      }
+    }
+  }
+</style>
