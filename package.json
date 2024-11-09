@@ -58,7 +58,7 @@
     "@fontsource-variable/montserrat": "5.1.0",
     "@playform/compress": "0.1.6",
     "@playform/inline": "0.1.0",
-    "astro": "4.16.8",
+    "astro": "4.16.10",
     "astro-compressor": "0.4.1",
     "astro-icon": "1.1.1",
     "astro-seo-schema": "4.0.2",
