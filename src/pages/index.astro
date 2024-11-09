@@ -3,6 +3,7 @@ import Layout from '@layouts/Layout.astro'
 import Navbar from '@components/Navbar.astro'
 import OpenGraph from '@components/OpenGraph.astro'
 import Topbar from '@components/Topbar.astro'
+import Playground from '@components/ui/Playground.astro'
 
 const options = {
   title: 'Codepen Concept',
@@ -18,6 +19,20 @@ const options = {
     slot="social-media"
   />
 
-  <Topbar />
-  <Navbar />
+  <main>
+    <Topbar />
+    <Navbar />
+    <Playground />
+  </main>
 </Layout>
+
+<style>
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 32px;
+  }
+</style>
