@@ -61,7 +61,7 @@
     "astro": "4.16.10",
     "astro-compressor": "0.4.1",
     "astro-icon": "1.1.2",
-    "astro-seo-schema": "4.0.2",
+    "astro-seo-schema": "4.0.3",
     "astro-sitemap": "1.0.0",
     "astro-tunnel": "0.1.6",
     "lightningcss": "1.28.1",
