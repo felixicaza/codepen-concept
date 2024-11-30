@@ -88,7 +88,7 @@
     "eslint-plugin-n": "16.6.2",
     "eslint-plugin-promise": "6.1.1",
     "lint-staged": "15.2.10",
-    "prettier": "3.3.3",
+    "prettier": "3.4.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "0.6.8",
     "simple-git-hooks": "2.11.1"
