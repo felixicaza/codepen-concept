@@ -55,7 +55,7 @@
   "dependencies": {
     "@astrojs/check": "0.9.4",
     "@astrojs/ts-plugin": "1.10.4",
-    "@fontsource-variable/montserrat": "5.1.0",
+    "@fontsource-variable/montserrat": "5.1.1",
     "@playform/compress": "0.1.6",
     "@playform/inline": "0.1.0",
     "astro": "4.16.18",
