@@ -45,9 +45,7 @@ ignore:
    - dist
    - .prettierrc.mjs
    - .prettierignore
-   - .eslintrc.cjs
-   - .eslintcache
-   - .eslintignore
    - .ls-lint.yml
+   - eslint.config.js
    - astro.config.mjs
    - commitlint.config.js

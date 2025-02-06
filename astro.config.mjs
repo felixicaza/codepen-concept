@@ -1,12 +1,13 @@
-import { defineConfig } from 'astro/config'
-import { URL } from './src/data/constants'
-
-import tunnel from 'astro-tunnel'
-import icon from 'astro-icon'
-import playformInline from '@playform/inline'
-import sitemap from 'astro-sitemap'
 import playformCompress from '@playform/compress'
+import playformInline from '@playform/inline'
+
 import compressor from 'astro-compressor'
+import icon from 'astro-icon'
+import sitemap from 'astro-sitemap'
+import tunnel from 'astro-tunnel'
+import { defineConfig } from 'astro/config'
+// eslint-disable-next-line n/no-missing-import
+import { URL } from './src/data/constants'
 
 // https://astro.build/config
 export default defineConfig({
@@ -44,7 +45,6 @@ export default defineConfig({
       },
       // Remove trailing slash
       serialize(item) {
-        /* eslint-disable-next-line no-param-reassign */
         item.url = item.url.replace(/\/$/g, '')
         return item
       }

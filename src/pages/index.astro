@@ -1,9 +1,9 @@
 ---
-import Layout from '@layouts/Layout.astro'
 import Navbar from '@components/Navbar.astro'
 import OpenGraph from '@components/OpenGraph.astro'
 import Topbar from '@components/Topbar.astro'
 import Playground from '@components/ui/Playground.astro'
+import Layout from '@layouts/Layout.astro'
 
 const options = {
   title: 'Codepen Concept',
@@ -13,10 +13,10 @@ const options = {
 
 <Layout options={options}>
   <OpenGraph
-    title={options.title}
     description={options.description}
     image="/og/og.jpg"
     slot="social-media"
+    title={options.title}
   />
 
   <main>

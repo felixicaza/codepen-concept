@@ -75,6 +75,7 @@ export default [
       parser: parserYml
     },
     rules: {
+      '@stylistic/spaced-comment': 'off',
       ...pluginYml.configs['flat/standard'].rules,
       'yml/indent': ['error', 3, { indicatorValueIndent: 2 }],
       'yml/quotes': ['error', { prefer: 'double' }]

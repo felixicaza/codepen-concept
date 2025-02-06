@@ -13,15 +13,15 @@ const {
 ---
 
 <!-- Facebook Meta Tags -->
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={new URL(image, Astro.url)} />
-<meta property="og:url" content={Astro.url.href} />
-<meta property="og:type" content="website" />
+<meta content={title} property="og:title" />
+<meta content={description} property="og:description" />
+<meta content={new URL(image, Astro.url)} property="og:image" />
+<meta content={Astro.url.href} property="og:url" />
+<meta content="website" property="og:type" />
 
 <!-- Twitter Meta Tags -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={new URL(image, Astro.url)} />
-<meta property="twitter:url" content={Astro.url.href} />
+<meta content="summary_large_image" name="twitter:card" />
+<meta content={title} name="twitter:title" />
+<meta content={description} name="twitter:description" />
+<meta content={new URL(image, Astro.url)} name="twitter:image" />
+<meta content={Astro.url.href} property="twitter:url" />

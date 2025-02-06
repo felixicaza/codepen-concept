@@ -1,8 +1,8 @@
 ---
 import type { Options } from '@contracts'
+import Favicons from '@components/Favicons.astro'
 import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'
 import { Schema } from 'astro-seo-schema'
-import Favicons from '@components/Favicons.astro'
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/assets.css'
@@ -22,7 +22,7 @@ const { title, description, metaRobots } = options
 <html dir="ltr" lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
 
     <title>{title}</title>
 
@@ -31,19 +31,19 @@ const { title, description, metaRobots } = options
     <slot name="async-script" />
 
     <link
-      rel="preload"
       as="font"
       crossorigin="anonymous"
-      href={montserrat}
-      type="font/woff2"
       fetchpriority="high"
+      href={montserrat}
+      rel="preload"
+      type="font/woff2"
     />
     <link
-      rel="preload"
       as="image"
-      href="/images/background.png"
-      type="image/png"
       fetchpriority="high"
+      href="/images/background.png"
+      rel="preload"
+      type="image/png"
     />
 
     <!-- Critical CSS -->
@@ -151,14 +151,14 @@ const { title, description, metaRobots } = options
 
     <slot name="defer-script" />
 
-    <meta name="robots" content={metaRobots || 'index, follow'} />
-    {description && <meta name="description" content={description} />}
+    <meta content={metaRobots || 'index, follow'} name="robots" />
+    {description && <meta content={description} name="description" />}
     {description && <link href={Astro.url.href} rel="canonical" />}
     <meta
-      name="author"
       content="Felix Icaza - https://github.com/felixicaza/codepen-concept"
+      name="author"
     />
-    <meta name="generator" content={Astro.generator} />
+    <meta content={Astro.generator} name="generator" />
 
     {
       description && (
@@ -190,7 +190,7 @@ const { title, description, metaRobots } = options
 
     <Favicons />
 
-    <meta name="theme-color" content="#ee2525" />
+    <meta content="#ee2525" name="theme-color" />
 
     <slot name="social-media" />
   </head>
