@@ -3,7 +3,6 @@
     "astro-build.astro-vscode",
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "standard.vscode-standard"
   ]
 }
