@@ -51,7 +51,7 @@
     "astro-seo-schema": "4.0.3",
     "astro-sitemap": "1.0.0",
     "astro-tunnel": "0.1.6",
-    "lightningcss": "1.29.1",
+    "lightningcss": "1.29.3",
     "sanitize.css": "13.0.0",
     "schema-dts": "1.1.2",
     "sharp": "0.33.5",
