@@ -11,6 +11,10 @@ updates:
      target-branch: "main"
      labels:
         - "dependencies"
+     groups:
+        dependencies:
+           patterns:
+              - "*"
    - package-ecosystem: "github-actions"
      directory: "/"
      schedule:
@@ -22,3 +26,7 @@ updates:
      target-branch: "main"
      labels:
         - "actions"
+     groups:
+        actions:
+           patterns:
+              - "*"
