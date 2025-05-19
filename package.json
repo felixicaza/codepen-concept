@@ -26,18 +26,18 @@
     "astro": "astro",
     "build": "astro check && astro build",
     "dev": "astro dev",
+    "lint": "eslint --cache .",
+    "lint:fix": "eslint --cache --fix .",
     "prepare": "simple-git-hooks",
     "preview": "astro preview",
     "start": "astro dev"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint-staged && pnpm ls-lint",
+    "pre-commit": "pnpm nano-staged && pnpm ls-lint",
     "commit-msg": "pnpm commitlint -c -e ${1}"
   },
-  "lint-staged": {
-    "./**/*.{js,mjs,cjs,ts,astro,yml,yaml,json}": [
-      "eslint --cache --fix ./"
-    ]
+  "nano-staged": {
+    "*": "pnpm lint:fix"
   },
   "dependencies": {
     "@astrojs/check": "0.9.4",
@@ -72,7 +72,7 @@
     "eslint-plugin-yml": "1.16.0",
     "globals": "15.14.0",
     "jsonc-eslint-parser": "2.4.0",
-    "lint-staged": "15.4.1",
+    "nano-staged": "0.8.0",
     "neostandard": "0.12.1",
     "simple-git-hooks": "2.11.1",
     "typescript-eslint": "8.23.0",
