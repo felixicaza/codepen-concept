@@ -1,7 +1,6 @@
 {
   "recommendations": [
     "astro-build.astro-vscode",
-    "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint"
   ]
 }
