@@ -10,7 +10,6 @@ ls:
    .yml: kebab-case
    .yaml: kebab-case
 
-   # Astro files
    src/components:
       .astro: PascalCase
    src/components/ui:
@@ -22,13 +21,11 @@ ls:
    src/pages/_*:
       .astro: PascalCase
 
-   # Multimedia  files
    .mp4: kebab-case
    .webm: kebab-case
    .mp3: kebab-case
    .ogg: kebab-case
 
-   # Media files
    .png: kebab-case
    .jpg: kebab-case
    .jpeg: kebab-case
