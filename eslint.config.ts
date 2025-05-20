@@ -14,7 +14,7 @@ export default defineConfig([
   globalIgnores(resolveIgnoresFromGitignore()),
   { languageOptions: { globals: { ...globals.browser, ...globals.node } } },
   pluginJs.configs.recommended,
-  ...neostandard({
+  neostandard({
     noJsx: true,
     ts: true
   }),
