@@ -5,7 +5,7 @@ interface Props {
   icon: string
 }
 
-const { icon } = Astro.props
+const { icon } = Astro.props as Props
 ---
 
 <button class="gradient" type="button">

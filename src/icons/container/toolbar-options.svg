@@ -6,14 +6,7 @@
     fill="url(#paint0_linear_1_156)"
   />
   <defs>
-    <linearGradient
-      id="paint0_linear_1_156"
-      x1="14"
-      y1="0.200049"
-      x2="14"
-      y2="5.80005"
-      gradientUnits="userSpaceOnUse"
-    >
+    <linearGradient id="paint0_linear_1_156" x1="14" y1="0.200049" x2="14" y2="5.80005" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FAFAFA" />
       <stop offset="1" stop-color="#666666" />
     </linearGradient>

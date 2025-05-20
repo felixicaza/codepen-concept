@@ -1,8 +1,10 @@
 ---
 import type { Options } from '@contracts'
-import Favicons from '@components/Favicons.astro'
-import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'
+
 import { Schema } from 'astro-seo-schema'
+
+import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'
+
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
 import 'sanitize.css/assets.css'
@@ -10,11 +12,13 @@ import 'sanitize.css/typography.css'
 import 'sanitize.css/reduce-motion.css'
 import '@fontsource-variable/montserrat'
 
+import Favicons from '@components/Favicons.astro'
+
 interface Props {
   options: Options
 }
 
-const { options } = Astro.props
+const { options } = Astro.props as Props
 const { title, description, metaRobots } = options
 ---
 

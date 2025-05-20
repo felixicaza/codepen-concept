@@ -4,14 +4,7 @@
     fill="url(#paint0_linear_1_23)"
   />
   <defs>
-    <linearGradient
-      id="paint0_linear_1_23"
-      x1="18"
-      y1="0"
-      x2="18"
-      y2="28"
-      gradientUnits="userSpaceOnUse"
-    >
+    <linearGradient id="paint0_linear_1_23" x1="18" y1="0" x2="18" y2="28" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FAFAFA" />
       <stop offset="1" stop-color="#888888" />
     </linearGradient>

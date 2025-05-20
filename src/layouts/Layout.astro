@@ -1,12 +1,13 @@
 ---
 import type { Options } from '@contracts'
+
 import Base from '@layouts/Base.astro'
 
 interface Props {
   options: Options
 }
 
-const { options } = Astro.props
+const { options } = Astro.props as Props
 ---
 
 <Base options={options}>
