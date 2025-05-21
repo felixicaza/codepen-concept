@@ -1,5 +1,5 @@
 {
-  "name": "Codepen Concept Design",
+  "name": "Codepen Concept",
   "short_name": "Codepen Concept",
   "icons": [
     {
@@ -15,7 +15,7 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ee2525",
-  "background_color": "#404040",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "display": "standalone"
 }
