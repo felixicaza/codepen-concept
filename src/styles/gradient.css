@@ -5,14 +5,7 @@
 }
 
 .gradient {
-  --gradient: linear-gradient(
-    var(--angle),
-    #47cf73 0%,
-    #ffdd40 25%,
-    #ae63e4 50%,
-    #0ebeff 75%,
-    #47cf73 100%
-  );
+  --gradient: linear-gradient(var(--angle), #47cf73 0%, #ffdd40 25%, #ae63e4 50%, #0ebeff 75%, #47cf73 100%);
 
   background:
     linear-gradient(to top, #111, #333) padding-box,
@@ -40,15 +33,28 @@
     transition: opacity 300ms ease;
   }
 
-  &:hover {
+  &.active, &:active {
     background:
       linear-gradient(to top, #111, #333) padding-box,
       var(--gradient) border-box;
     animation: rotate 8s linear infinite;
+
+    &::before {
+      opacity: 1;
+    }
   }
 
-  &:hover::before {
-    opacity: 1;
+  @media (any-hover: hover) {
+    &:hover {
+      background:
+        linear-gradient(to top, #111, #333) padding-box,
+        var(--gradient) border-box;
+      animation: rotate 8s linear infinite;
+
+      &::before {
+        opacity: 1;
+      }
+    }
   }
 }
 
