@@ -13,12 +13,7 @@ const options = {
 ---
 
 <Layout options={options}>
-  <OpenGraph
-    description={options.description}
-    image="/og/og.jpg"
-    slot="social-media"
-    title={options.title}
-  />
+  <OpenGraph title={options.title} description={options.description} image="/og/og.jpg" slot="social-media" />
 
   <main>
     <Topbar />
