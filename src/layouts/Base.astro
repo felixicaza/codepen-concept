@@ -34,120 +34,8 @@ const { title, description, metaRobots } = options
 
     <slot name="async-script" />
 
-    <link
-      as="font"
-      crossorigin="anonymous"
-      fetchpriority="high"
-      href={montserrat}
-      rel="preload"
-      type="font/woff2"
-    />
-    <link
-      as="image"
-      fetchpriority="high"
-      href="/images/background.png"
-      rel="preload"
-      type="image/png"
-    />
-
-    <!-- Critical CSS -->
-    <style is:inline>
-      :root {
-        --accent: 136, 58, 234;
-        --accent-light: 224, 204, 250;
-        --accent-dark: 49, 10, 101;
-        --accent-gradient: linear-gradient(
-          45deg,
-          rgb(var(--accent)),
-          rgb(var(--accent-light)) 30%,
-          white 60%
-        );
-        --scrollbar: #e5e5e5;
-        --scrollbar-thumb: #c0c0c0;
-        --scrollbar-thumb-hover: #909090;
-        --scrollbar-dark: #898989;
-        --scrollbar-thumb-dark: #5d5d5d;
-        --scrollbar-thumb-hover-dark: #3f3f3f;
-      }
-
-      @view-transition {
-        navigation: auto;
-      }
-
-      html,
-      body {
-        height: 100vh;
-        overflow: hidden;
-      }
-
-      body {
-        font-family: 'Montserrat Variable', sans-serif;
-        background: #0a0a0a;
-        position: relative;
-
-        &::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: url('/images/background.png');
-          opacity: 0.034;
-          z-index: -1;
-        }
-      }
-
-      body::-webkit-scrollbar {
-        width: 7px;
-        height: 7px;
-        background: var(--scrollbar);
-        transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-        will-change: background;
-      }
-
-      body::-webkit-scrollbar-thumb {
-        background: var(--scrollbar-thumb);
-        border-radius: 0.25rem;
-      }
-
-      @media (any-hover: hover) {
-        body::-webkit-scrollbar-thumb:hover {
-          background: var(--scrollbar-thumb-hover);
-        }
-      }
-
-      @media (prefers-color-scheme: dark) {
-        html body::-webkit-scrollbar {
-          background: var(--scrollbar-dark);
-          transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-          will-change: background;
-        }
-
-        html body::-webkit-scrollbar-thumb {
-          background: var(--scrollbar-thumb-dark);
-        }
-
-        @media (any-hover: hover) {
-          html body::-webkit-scrollbar-thumb:hover {
-            background: var(--scrollbar-thumb-hover-dark);
-          }
-        }
-      }
-
-      @supports not selector(::-webkit-scrollbar) {
-        html,
-        body {
-          scrollbar-color: var(--scrollbar) var(--scrollbar-thumb);
-          scrollbar-width: thin;
-          scrollbar-gutter: stable;
-        }
-
-        @media (prefers-color-scheme: dark) {
-          html,
-          html body {
-            scrollbar-color: var(--scrollbar-dark) var(--scrollbar-thumb-dark);
-          }
-        }
-      }
-    </style>
+    <link as="font" crossorigin="anonymous" fetchpriority="high" href={montserrat} rel="preload" type="font/woff2" />
+    <link as="image" fetchpriority="high" href="/images/background.png" rel="preload" type="image/png" />
 
     <slot name="stylesheet" />
 
@@ -158,10 +46,7 @@ const { title, description, metaRobots } = options
     <meta content={metaRobots || 'index, follow'} name="robots" />
     {description && <meta content={description} name="description" />}
     {description && <link href={Astro.url.href} rel="canonical" />}
-    <meta
-      content="Felix Icaza - https://github.com/felixicaza/codepen-concept"
-      name="author"
-    />
+    <meta content="Felix Icaza - https://github.com/felixicaza/codepen-concept" name="author" />
     <meta content={Astro.generator} name="generator" />
 
     {
@@ -204,3 +89,96 @@ const { title, description, metaRobots } = options
     <slot name="dynamic-components" />
   </body>
 </html>
+
+<style>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
+    --scrollbar: #e5e5e5;
+    --scrollbar-thumb: #c0c0c0;
+    --scrollbar-thumb-hover: #909090;
+    --scrollbar-dark: #898989;
+    --scrollbar-thumb-dark: #5d5d5d;
+    --scrollbar-thumb-hover-dark: #3f3f3f;
+  }
+
+  @view-transition {
+    navigation: auto;
+  }
+
+  html,
+  body {
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  body {
+    font-family: 'Montserrat Variable', sans-serif;
+    background: #0a0a0a;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('/images/background.png');
+      opacity: 0.034;
+      z-index: -1;
+    }
+  }
+
+  body::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    background: var(--scrollbar);
+    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: background;
+  }
+
+  body::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 0.25rem;
+  }
+
+  @media (any-hover: hover) {
+    body::-webkit-scrollbar-thumb:hover {
+      background: var(--scrollbar-thumb-hover);
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    html body::-webkit-scrollbar {
+      background: var(--scrollbar-dark);
+      transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: background;
+    }
+
+    html body::-webkit-scrollbar-thumb {
+      background: var(--scrollbar-thumb-dark);
+    }
+
+    @media (any-hover: hover) {
+      html body::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover-dark);
+      }
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    html,
+    body {
+      scrollbar-color: var(--scrollbar) var(--scrollbar-thumb);
+      scrollbar-width: thin;
+      scrollbar-gutter: stable;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html,
+      html body {
+        scrollbar-color: var(--scrollbar-dark) var(--scrollbar-thumb-dark);
+      }
+    }
+  }
+</style>
