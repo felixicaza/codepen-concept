@@ -10,7 +10,9 @@ import 'sanitize.css/forms.css'
 import 'sanitize.css/assets.css'
 import 'sanitize.css/typography.css'
 import 'sanitize.css/reduce-motion.css'
+
 import '@fontsource-variable/montserrat'
+import '@fontsource/monaspace-krypton'
 
 import Favicons from '@components/Favicons.astro'
 
@@ -91,26 +93,13 @@ const { title, description, metaRobots } = options
 </html>
 
 <style>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(45deg, rgb(var(--accent)), rgb(var(--accent-light)) 30%, white 60%);
-    --scrollbar: #e5e5e5;
-    --scrollbar-thumb: #c0c0c0;
-    --scrollbar-thumb-hover: #909090;
-    --scrollbar-dark: #898989;
-    --scrollbar-thumb-dark: #5d5d5d;
-    --scrollbar-thumb-hover-dark: #3f3f3f;
-  }
-
   @view-transition {
     navigation: auto;
   }
 
   html,
   body {
-    height: 100vh;
+    height: 100svh;
     overflow: hidden;
   }
 
@@ -126,59 +115,6 @@ const { title, description, metaRobots } = options
       background: url('/images/background.png');
       opacity: 0.034;
       z-index: -1;
-    }
-  }
-
-  body::-webkit-scrollbar {
-    width: 7px;
-    height: 7px;
-    background: var(--scrollbar);
-    transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: background;
-  }
-
-  body::-webkit-scrollbar-thumb {
-    background: var(--scrollbar-thumb);
-    border-radius: 0.25rem;
-  }
-
-  @media (any-hover: hover) {
-    body::-webkit-scrollbar-thumb:hover {
-      background: var(--scrollbar-thumb-hover);
-    }
-  }
-
-  @media (prefers-color-scheme: dark) {
-    html body::-webkit-scrollbar {
-      background: var(--scrollbar-dark);
-      transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
-      will-change: background;
-    }
-
-    html body::-webkit-scrollbar-thumb {
-      background: var(--scrollbar-thumb-dark);
-    }
-
-    @media (any-hover: hover) {
-      html body::-webkit-scrollbar-thumb:hover {
-        background: var(--scrollbar-thumb-hover-dark);
-      }
-    }
-  }
-
-  @supports not selector(::-webkit-scrollbar) {
-    html,
-    body {
-      scrollbar-color: var(--scrollbar) var(--scrollbar-thumb);
-      scrollbar-width: thin;
-      scrollbar-gutter: stable;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      html,
-      html body {
-        scrollbar-color: var(--scrollbar-dark) var(--scrollbar-thumb-dark);
-      }
     }
   }
 </style>

@@ -1,0 +1,31 @@
+.cm-editor {
+  height: 100%;
+}
+
+.cm-scroller::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #141414;
+  transition: background 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: background;
+  border-radius: 16px;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background: #33a9dc;
+  border-radius: 16px;
+}
+
+@media (any-hover: hover) {
+  .cm-scroller::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+  }
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .cm-scroller {
+    scrollbar-color: #33a9dc #141414;
+    scrollbar-width: thin;
+    scrollbar-gutter: stable;
+  }
+}
