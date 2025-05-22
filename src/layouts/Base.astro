@@ -4,6 +4,7 @@ import type { Options } from '@contracts'
 import { Schema } from 'astro-seo-schema'
 
 import montserrat from '@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2'
+import krypton from '@fontsource/monaspace-krypton/files/monaspace-krypton-latin-400-normal.woff2'
 
 import 'sanitize.css'
 import 'sanitize.css/forms.css'
@@ -37,6 +38,7 @@ const { title, description, metaRobots } = options
     <slot name="async-script" />
 
     <link as="font" crossorigin="anonymous" fetchpriority="high" href={montserrat} rel="preload" type="font/woff2" />
+    <link as="font" crossorigin="anonymous" fetchpriority="high" href={krypton} rel="preload" type="font/woff2" />
     <link as="image" fetchpriority="high" href="/images/background.png" rel="preload" type="image/png" />
 
     <slot name="stylesheet" />
