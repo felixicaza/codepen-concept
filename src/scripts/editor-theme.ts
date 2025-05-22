@@ -1,41 +1,68 @@
-import { EditorView } from '@codemirror/view'
+import type { Extension } from '@codemirror/state'
 
-const editorTheme = EditorView.theme({
+import { EditorView } from '@codemirror/view'
+import { HighlightStyle, syntaxHighlighting } from '@codemirror/language'
+import { tags as t } from '@lezer/highlight'
+
+const sunburstTango = '#FF7E2B'
+const skydiveBloom = '#3782F2'
+const tropicMint = '#27C7B9'
+const limeZest = '#A3D65A'
+const solarHoney = '#FFDD40'
+const midnightAsh = '#333333'
+const cloudDrift = '#AAAAAA'
+const crystalBay = '#56B6C2'
+const pureSnow = '#FFFFFF'
+const ghostBlush = '#FF000055'
+const selection = '#131313'
+const activeLine = '#191919'
+
+const customTheme = EditorView.theme({
   '&': {
-    color: '#fff',
+    color: pureSnow,
     backgroundColor: 'transparent',
     fontSize: '15px'
   },
   '.cm-content': {
-    fontFamily: '\'Monaspace Krypton\', monospace'
+    fontFamily: '"Monaspace Krypton", monospace'
   },
   '.cm-gutters': {
     backgroundColor: 'transparent',
-    color: '#333',
+    color: midnightAsh,
     border: 'none',
-    fontFamily: '\'Monaspace Krypton\', monospace'
-  },
-  '.ͼi': {
-    color: '#FF7E2B'
-  },
-  '.cm-line': {
-    color: '#3782F2'
-  },
-  '.ͼd, .ͼb': {
-    color: '#27C7B9'
-  },
-  '.ͼc': {
-    color: '#A3D65A'
-  },
-  '.ͼj': {
-    color: '#FFDD40'
+    fontFamily: '"Monaspace Krypton", monospace'
   },
   '&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, .cm-content ::selection': {
-    backgroundColor: '#131313'
+    backgroundColor: selection
   },
   '.cm-activeLineGutter, .cm-activeLine': {
-    backgroundColor: '#191919'
+    backgroundColor: activeLine
   }
 }, { dark: true })
 
-export default editorTheme
+const customHighlightStyle = HighlightStyle.define([
+  { tag: t.keyword, color: crystalBay },
+  { tag: [t.bool], color: solarHoney },
+  { tag: t.string, color: limeZest },
+  { tag: t.comment, color: midnightAsh, fontStyle: 'italic' },
+  { tag: [t.function(t.variableName), t.labelName], color: tropicMint },
+  { tag: [t.literal, t.atom], color: limeZest },
+  { tag: t.typeName, color: sunburstTango },
+  { tag: t.className, color: solarHoney },
+  { tag: t.tagName, color: sunburstTango },
+  { tag: t.number, color: tropicMint },
+  { tag: t.attributeName, color: limeZest },
+  { tag: t.propertyName, color: skydiveBloom },
+  { tag: [t.operator, t.operatorKeyword], color: skydiveBloom },
+  { tag: t.punctuation, color: cloudDrift },
+  { tag: [t.regexp, t.special(t.string)], color: crystalBay },
+  { tag: t.meta, color: cloudDrift },
+  { tag: t.invalid, color: pureSnow, backgroundColor: ghostBlush }
+])
+
+const theme: Extension = [
+  customTheme,
+  syntaxHighlighting(customHighlightStyle)
+]
+
+export default theme
