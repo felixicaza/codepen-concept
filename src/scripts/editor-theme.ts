@@ -52,6 +52,7 @@ const customHighlightStyle = HighlightStyle.define([
   { tag: t.tagName, color: sunburstTango },
   { tag: t.number, color: tropicMint },
   { tag: t.attributeName, color: limeZest },
+  { tag: t.attributeValue, color: solarHoney },
   { tag: t.propertyName, color: skydiveBloom },
   { tag: [t.operator, t.operatorKeyword], color: skydiveBloom },
   { tag: t.punctuation, color: cloudDrift },
