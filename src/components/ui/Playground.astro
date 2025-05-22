@@ -8,13 +8,13 @@ import '@styles/editor.css'
   <div class="code-container">
     <div class="tools-container">
       <div class="code-tools">
-        <button type="button">
+        <button type="button" data-tab="html" class="active">
           <Icon name="container/html" size={20} />
         </button>
-        <button type="button">
+        <button type="button" data-tab="css">
           <Icon name="container/css" size={20} />
         </button>
-        <button type="button">
+        <button type="button" data-tab="js">
           <Icon name="container/javascript" size={20} />
         </button>
       </div>
@@ -37,52 +37,95 @@ import '@styles/editor.css'
 </section>
 
 <script>
-import { basicSetup } from 'codemirror'
-import { EditorView } from '@codemirror/view'
-import { css } from '@codemirror/lang-css'
+  import { basicSetup } from 'codemirror'
+  import { StateEffect } from '@codemirror/state'
+  import { EditorView } from '@codemirror/view'
+  import { html as langHTML } from '@codemirror/lang-html'
+  import { css as langCSS } from '@codemirror/lang-css'
+  import { javascript as langJS } from '@codemirror/lang-javascript'
 
-import theme from '@scripts/editor-theme'
+  import theme from '@scripts/editor-theme'
 
-const codeElement = document.querySelector('.code')
+  import html from '@data/html'
+  import css from '@data/css'
+  import javascript from '@data/javascript'
 
-if (codeElement) {
-  const editor = new EditorView({
-    doc: `html,body{
-  margin:0;
-  height:100vh;
-}
+  const codeButtons = document.querySelector('.code-tools')
+  const buttons = document.querySelectorAll('.code-tools button')
+  const codeElement = document.querySelector('.code')
 
-body{
-  display:grid;
-  place-items:center;
-  background:#010307;
-}
+  const htmlCode = html
+  const cssCode = css
+  const jsCode = javascript
 
-.container{
-  display:grid;
-  place-items:center;
-}
+  let currentTab = 'html'
+  let editor: EditorView | null = null
 
-.lines-container{
-  display:grid;
-  z-index:2;
-  place-items:center;
-  height:550px;
-  width:550px;
-}
+  const extensions = {
+    html: langHTML(),
+    css: langCSS(),
+    js: langJS()
+  }
 
-.line-1{
-  display:flex;
-  height:550px;
-  width:3px;
-  background:linear-gradient(transparent,#83ccff,transparent);
-}`,
-    parent: codeElement,
-    extensions: [basicSetup, css(), theme]
-  })
+  const docs = {
+    html: htmlCode,
+    css: cssCode,
+    js: jsCode
+  }
 
-  console.log(editor)
-}
+  const codeState = { ...docs }
+
+  function getExtension(tab: string) {
+    return extensions[tab as keyof typeof extensions]
+  }
+
+  function getDoc(tab: string) {
+    return codeState[tab as keyof typeof codeState]
+  }
+
+  function setDoc(tab: string, value: string) {
+    codeState[tab as keyof typeof codeState] = value
+  }
+
+  if (codeElement) {
+    editor = new EditorView({
+      doc: html,
+      parent: codeElement,
+      extensions: [basicSetup, langHTML(), theme]
+    })
+
+    codeButtons?.addEventListener('click', (event) => {
+      const { target } = event
+
+      const btn = (target as Element).closest('button[data-tab]')
+      const tab = btn?.getAttribute('data-tab')
+
+      if (!tab || tab === currentTab) return
+
+      setDoc(currentTab, editor?.state?.doc?.toString() ?? '')
+      currentTab = tab
+
+      editor?.dispatch({
+        changes: { from: 0, to: editor.state.doc.length, insert: getDoc(tab) }
+      })
+
+      editor?.dispatch({
+        effects: StateEffect.reconfigure.of([
+          basicSetup,
+          getExtension(tab) ?? langHTML(),
+          theme
+        ])
+      })
+
+      buttons.forEach((button) => {
+        if (button.getAttribute('data-tab') === tab) {
+          button.classList.add('active')
+        } else {
+          button.classList.remove('active')
+        }
+      })
+    })
+  }
 </script>
 
 <style>
@@ -120,8 +163,10 @@ body{
 
           button {
             --size: 48px;
+            --active: linear-gradient(to top, #33a9dc, #33a9dc);
+            --inactive: linear-gradient(to top, #111, #333);
 
-            background: linear-gradient(to top, #111, #333);
+            background: var(--inactive);
             border: none;
             cursor: pointer;
             display: grid;
@@ -130,14 +175,19 @@ body{
             width: var(--size);
             height: var(--size);
             border-radius: 8px;
-            transition:
-              background,
-              box-shadow 300ms ease;
+            transition: background 300ms ease, box-shadow 300ms ease;
             will-change: background, box-shadow;
 
-            &:hover {
-              background: linear-gradient(to top, #33a9dc, #33a9dc);
+            &.active {
+              background: var(--active);
               box-shadow: 0 0 20px #33a9dc;
+            }
+
+            @media (any-hover: hover) {
+              &:hover {
+                background: var(--active);
+                box-shadow: 0 0 20px #33a9dc;
+              }
             }
           }
         }
