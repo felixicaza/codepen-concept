@@ -30,6 +30,7 @@ import '@styles/editor.css'
     <div class="code"></div>
   </div>
   <div class="preview-container">
+    <iframe id="preview" title="preview"></iframe>
     <button type="button">
       <Icon height={6} name="container/toolbar-options" width={28} />
     </button>
@@ -53,6 +54,7 @@ import '@styles/editor.css'
   const codeButtons = document.querySelector('.code-tools')
   const buttons = document.querySelectorAll('.code-tools button')
   const codeElement = document.querySelector('.code')
+  const preview = document.querySelector('#preview') as HTMLIFrameElement
 
   const htmlCode = html
   const cssCode = css
@@ -87,12 +89,54 @@ import '@styles/editor.css'
     codeState[tab as keyof typeof codeState] = value
   }
 
+  function debounce<T extends any[]>(fn: (...args: T) => void, delay: number | undefined) {
+    let timer: ReturnType<typeof setTimeout> | undefined
+
+    return function (...args: T) {
+      clearTimeout(timer)
+      timer = setTimeout(() => fn(...args), delay)
+    }
+  }
+
+  function renderPreview() {
+    if (!preview) return
+
+    const doc = `
+      <!DOCTYPE html>
+      <html>
+      <head>
+        <meta charset="UTF-8" />
+        <style>${codeState.css}</style>
+      </head>
+      <body>
+        ${codeState.html}
+        <script type="module">${codeState.js}<\\/script>
+      </body>
+      </html>
+    `
+    preview.srcdoc = doc
+  }
+
+  const debouncedRender = debounce(renderPreview, 350)
+
   if (codeElement) {
     editor = new EditorView({
       doc: html,
       parent: codeElement,
-      extensions: [basicSetup, langHTML(), theme]
+      extensions: [
+        basicSetup,
+        langHTML(),
+        theme,
+        EditorView.updateListener.of((update) => {
+          if (update.docChanged) {
+            setDoc(currentTab, update.state.doc.toString())
+            debouncedRender()
+          }
+        })
+      ]
     })
+
+    renderPreview()
 
     codeButtons?.addEventListener('click', (event) => {
       const { target } = event
@@ -113,7 +157,13 @@ import '@styles/editor.css'
         effects: StateEffect.reconfigure.of([
           basicSetup,
           getExtension(tab) ?? langHTML(),
-          theme
+          theme,
+          EditorView.updateListener.of((update) => {
+            if (update.docChanged) {
+              setDoc(currentTab, update.state.doc.toString())
+              debouncedRender()
+            }
+          })
         ])
       })
 
@@ -220,6 +270,13 @@ import '@styles/editor.css'
       position: relative;
       background-color: #0a0a0a;
       border-radius: 16px;
+
+      #preview {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 16px;
+      }
 
       button {
         --size: 48px;
