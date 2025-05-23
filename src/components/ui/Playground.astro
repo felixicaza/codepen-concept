@@ -124,6 +124,7 @@ import '@styles/editor.css'
       doc: html,
       parent: codeElement,
       extensions: [
+        EditorView.lineWrapping,
         basicSetup,
         langHTML(),
         theme,
@@ -155,6 +156,7 @@ import '@styles/editor.css'
 
       editor?.dispatch({
         effects: StateEffect.reconfigure.of([
+          EditorView.lineWrapping,
           basicSetup,
           getExtension(tab) ?? langHTML(),
           theme,
