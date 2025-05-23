@@ -46,6 +46,7 @@ import '@styles/editor.css'
   import { javascript as langJS } from '@codemirror/lang-javascript'
 
   import theme from '@scripts/editor-theme'
+  import previewContent from '@scripts/preview-content'
 
   import html from '@data/html'
   import css from '@data/css'
@@ -101,19 +102,7 @@ import '@styles/editor.css'
   function renderPreview() {
     if (!preview) return
 
-    const doc = `
-      <!DOCTYPE html>
-      <html>
-      <head>
-        <meta charset="UTF-8" />
-        <style>${codeState.css}</style>
-      </head>
-      <body>
-        ${codeState.html}
-        <script type="module">${codeState.js}<\\/script>
-      </body>
-      </html>
-    `
+    const doc = previewContent(codeState.html, codeState.css, codeState.js)
     preview.srcdoc = doc
   }
 
@@ -277,12 +266,14 @@ import '@styles/editor.css'
       position: relative;
       background-color: #0a0a0a;
       border-radius: 16px;
+      overflow: hidden;
 
       #preview {
         width: 100%;
         height: 100%;
         border: none;
         border-radius: inherit;
+        padding: 10px;
       }
 
       button {

@@ -18,7 +18,7 @@
 
 @media (any-hover: hover) {
   .cm-scroller::-webkit-scrollbar-thumb:hover {
-    background: var(--scrollbar-thumb-hover);
+    background: color-mix(in srgb, #33a9dc, #141414 45%);
   }
 }
 
