@@ -1,0 +1,32 @@
+---
+import Code from '@ui/Playground/Code.astro'
+import Preview from '@ui/Playground/Preview.astro'
+
+import '@styles/editor.css'
+---
+
+<section>
+  <Code />
+  <Preview />
+</section>
+
+<style>
+  section {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 16px;
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-inline: auto;
+    max-width: 1856px;
+    margin-bottom: 32px;
+    padding: 16px;
+    border-radius: 32px;
+    overflow-y: hidden;
+
+    @media (width >= 1200px) {
+      grid-template-columns: 0.75fr 1fr;
+      grid-template-rows: 1fr;
+    }
+  }
+</style>

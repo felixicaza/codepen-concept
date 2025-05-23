@@ -1,0 +1,108 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="code-container">
+  <div class="tools-container">
+    <div class="code-tools">
+      <button type="button" data-tab="html" class="active">
+        <Icon name="container/html" size={20} />
+      </button>
+      <button type="button" data-tab="css">
+        <Icon name="container/css" size={20} />
+      </button>
+      <button type="button" data-tab="js">
+        <Icon name="container/javascript" size={20} />
+      </button>
+    </div>
+    <div class="options-tools">
+      <button type="button">
+        <Icon name="container/settings" size={16} />
+      </button>
+      <button type="button">
+        <Icon height={4} name="container/options" width={18} />
+      </button>
+    </div>
+  </div>
+  <div class="code"></div>
+</div>
+
+<script>
+  import '@scripts/code'
+</script>
+
+<style>
+  .code-container {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    gap: 16px;
+    background: #0a0a0a;
+    border-radius: 16px;
+    padding: 24px 24px 21px 24px;
+    overflow-y: inherit;
+
+    .tools-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .code-tools {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        button {
+          --size: 48px;
+          --active: linear-gradient(to top, #33a9dc, #33a9dc);
+          --inactive: linear-gradient(to top, #111, #333);
+
+          background: var(--inactive);
+          border: none;
+          cursor: pointer;
+          display: grid;
+          place-items: center;
+          padding: 0;
+          width: var(--size);
+          height: var(--size);
+          border-radius: 8px;
+          transition: background 300ms ease, box-shadow 300ms ease;
+          will-change: background, box-shadow;
+
+          &.active {
+            background: var(--active);
+            box-shadow: 0 0 20px #33a9dc;
+          }
+
+          @media (any-hover: hover) {
+            &:hover {
+              background: var(--active);
+              box-shadow: 0 0 20px #33a9dc;
+            }
+          }
+        }
+      }
+
+      .options-tools {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+
+        button {
+          --size: 32px;
+
+          width: var(--size);
+          height: var(--size);
+          display: grid;
+          place-items: center;
+          border: none;
+          cursor: pointer;
+          padding: 0px;
+        }
+      }
+    }
+
+    .code {
+      overflow-y: inherit;
+    }
+  }
+</style>

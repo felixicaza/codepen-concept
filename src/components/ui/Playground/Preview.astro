@@ -1,0 +1,45 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<div class="preview-container">
+  <iframe id="preview" title="preview"></iframe>
+  <button type="button">
+    <Icon height={6} name="container/toolbar-options" width={28} />
+  </button>
+</div>
+
+<style>
+  .preview-container {
+    position: relative;
+    background-color: #0a0a0a;
+    border-radius: 16px;
+    overflow: hidden;
+
+    #preview {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: inherit;
+      padding: 10px;
+    }
+
+    button {
+      --size: 48px;
+
+      background-color: #0a0a0a;
+      border: none;
+      padding: 0;
+      display: grid;
+      place-items: center;
+      border-radius: 8px;
+      cursor: pointer;
+      width: var(--size);
+      height: var(--size);
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      translate: -21px -24px;
+    }
+  }
+</style>
