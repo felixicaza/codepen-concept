@@ -1,13 +1,52 @@
 ---
 import { Icon } from 'astro-icon/components'
+
+import toolbarOptions from '@data/toolbar-options'
 ---
 
 <div class="preview-container">
   <iframe id="preview" title="preview"></iframe>
-  <button type="button">
-    <Icon height={6} name="container/toolbar-options" width={28} />
-  </button>
+  <section class="toolbar-options">
+    {
+      toolbarOptions.map(({ width, height, name, label, isVisible }) => (
+        <button class:list={{ visible: isVisible }} type="button">
+          <Icon width={width} height={height} name={name} />
+          <span>{label}</span>
+        </button>
+      ))
+    }
+    <button class="visible options" type="button">
+      <Icon class="visible" width={22} height={6} name="preview/toolbar-options" />
+      <Icon width={17} height={17} name="preview/close" />
+    </button>
+  </section>
 </div>
+
+<script>
+  const toolbarOptions = document.querySelector('.options')
+
+  toolbarOptions?.addEventListener('click', ({ target }) => {
+    if (!(target instanceof HTMLButtonElement)) return
+
+    const icons = toolbarOptions.querySelectorAll('svg')
+    icons.forEach((icon) => icon.classList.toggle('visible'))
+
+    function toggleVisibility(target: HTMLButtonElement) {
+      let prevSiblings = target.previousElementSibling
+
+      while (prevSiblings) {
+        prevSiblings.classList.toggle('visible')
+        prevSiblings = prevSiblings.previousElementSibling
+      }
+    }
+
+    if (document.startViewTransition) {
+      document.startViewTransition(() => toggleVisibility(target))
+    } else {
+      toggleVisibility(target)
+    }
+  })
+</script>
 
 <style>
   .preview-container {
@@ -24,22 +63,91 @@ import { Icon } from 'astro-icon/components'
       padding: 10px;
     }
 
-    button {
-      --size: 48px;
-
+    .toolbar-options {
       background-color: #0a0a0a;
-      border: none;
-      padding: 0;
-      display: grid;
-      place-items: center;
-      border-radius: 8px;
-      cursor: pointer;
-      width: var(--size);
-      height: var(--size);
       position: absolute;
+      z-index: 1;
       bottom: 0;
       right: 0;
-      translate: -21px -24px;
+      translate: -22px -22px;
+      display: flex;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 8px;
+
+      button {
+        --size: 30px;
+        --background: linear-gradient(to bottom, #555, #333);
+
+        width: var(--size);
+        height: var(--size);
+        display: grid;
+        place-items: center;
+        position: relative;
+        border: none;
+        padding: 0;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 300ms ease;
+        display: none;
+
+        & * {
+          pointer-events: none;
+        }
+
+        &.options svg {
+          position: absolute;
+          inset: 0;
+          top: 50%;
+          left: 50%;
+          translate: -50% -50%;
+          opacity: 0;
+          transition: opacity 30ms ease;
+
+          &.visible {
+            opacity: 1;
+          }
+        }
+
+        &.visible {
+          display: block;
+        }
+
+        &:hover {
+          background: var(--background);
+
+          & span {
+            opacity: 1;
+            translate: -50% calc(calc(var(--size) * 1.9) * -1);
+          }
+        }
+
+        span {
+          position: absolute;
+          top: 0;
+          left: 40%;
+          translate: -50% calc(calc(var(--size) * 1.7) * -1);
+          background: var(--background);
+          color: #fff;
+          font-size: 12px;
+          padding: 8px 12px;
+          border-radius: 4px;
+          opacity: 0;
+          white-space: nowrap;
+          user-select: none;
+          transition: opacity 300ms ease, translate 300ms ease;
+
+          &::after {
+            content: '';
+            position: absolute;
+            background: #333;
+            z-index: -1;
+            inset: 0;
+            translate: 1px 10px;
+            mask: conic-gradient(from -30deg at bottom, transparent, #000 1deg 60deg, transparent 61deg) bottom / 100% 38% no-repeat;
+          }
+        }
+      }
     }
   }
 </style>
