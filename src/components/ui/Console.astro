@@ -1,0 +1,121 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
+<section class="console-menu">
+  <div class="topbar">
+    <div class="tab">
+      <Icon name="console-white" width={24} height={24} />
+      <span>Console</span>
+    </div>
+    <button class="close" type="button">
+      <Icon name="close" width={12} height={12} />
+    </button>
+  </div>
+  <div class="output">
+    <label>
+      <span>&gt;</span>
+      <input type="text" name="console" />
+    </label>
+  </div>
+</section>
+
+<script>
+  const consoleButton = document.querySelector('.controls .console')
+  const consoleMenu = document.querySelector('.console-menu')
+  const closeButton = consoleMenu?.querySelector('.close')
+
+  consoleButton?.addEventListener('click', () => {
+    consoleMenu?.classList.toggle('show')
+  })
+
+  closeButton?.addEventListener('click', () => {
+    consoleMenu?.classList.remove('show')
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      consoleMenu?.classList.remove('show')
+    }
+  })
+</script>
+
+<style>
+  .console-menu {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    translate: -50% 100%;
+    opacity: 0;
+    background:
+      linear-gradient(to top, #111, #111) padding-box,
+      linear-gradient(to top, #111 60%, #999) border-box;
+    border: 1px solid transparent;
+    color: #fafafa;
+    display: grid;
+    grid-template-rows: auto 1fr;
+    width: 100%;
+    max-width: 960px;
+    height: 300px;
+    border-radius: 8px 8px 0 0;
+    transition: opacity 110ms ease, translate 200ms ease;
+
+    &.show {
+      opacity: 1;
+      translate: -50% 0;
+    }
+
+    & .topbar {
+      background: #0a0a0a;
+      border-radius: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & .tab {
+        background: #111;
+        border-radius: inherit;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+      }
+
+      & button {
+        display: inline-block;
+        padding: 10px;
+        aspect-ratio: 1;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    & .output {
+      display: flex;
+      align-items: end;
+      padding: 16px;
+
+      & label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        background: #222;
+        color: #888;
+        border-radius: 100px;
+        padding: 5px 8px;
+
+        & span {
+          font-weight: 700;
+        }
+
+        & input {
+          width: 100%;
+          padding: 0px;
+          border: none;
+          outline: none;
+        }
+      }
+    }
+  }
+</style>
