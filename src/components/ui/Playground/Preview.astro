@@ -5,6 +5,10 @@ import toolbarOptions from '@data/toolbar-options'
 ---
 
 <div class="preview-container">
+  <span class="toast">
+    <Icon width={13} height={13} name="preview/ribbon" />
+    Pen Saved
+  </span>
   <iframe id="preview" title="preview"></iframe>
   <section class="toolbar-options">
     {
@@ -54,6 +58,33 @@ import toolbarOptions from '@data/toolbar-options'
     background-color: #0a0a0a;
     border-radius: 16px;
     overflow: hidden;
+
+    .toast {
+      user-select: none;
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: rgb(255 255 255 / 0.08);
+      color: #b1ffcb;
+      padding: 4px 12px;
+      border-radius: 8px;
+      border: 1px dashed #47cf73;
+      font-size: 13px;
+      translate: -22px 22px;
+      opacity: 0;
+      scale: 0;
+      transition: opacity 150ms ease, scale 200ms ease;
+
+      &.show {
+        opacity: 1;
+        scale: 1;
+        animation: shake 400ms linear 250ms;
+      }
+    }
 
     #preview {
       width: 100%;
@@ -148,6 +179,24 @@ import toolbarOptions from '@data/toolbar-options'
           }
         }
       }
+    }
+  }
+
+  @keyframes shake {
+    0% {
+      rotate: 0deg;
+    }
+    25% {
+      rotate: -4deg;
+    }
+    50% {
+      rotate: 4deg;
+    }
+    75% {
+      rotate: -4deg;
+    }
+    100% {
+      rotate: 0deg;
     }
   }
 </style>

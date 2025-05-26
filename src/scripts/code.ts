@@ -16,6 +16,7 @@ const codeButtons = document.querySelector('.code-tools')
 const buttons = document.querySelectorAll('.code-tools button')
 const codeElement = document.querySelector('.code')
 const preview = document.querySelector('#preview') as HTMLIFrameElement
+const toast = document.querySelector('.toast')
 
 const htmlCode = html
 const cssCode = css
@@ -53,9 +54,19 @@ function setDoc(tab: string, value: string) {
 function debounce<T extends any[]>(fn: (...args: T) => void, delay: number | undefined) {
   let timer: ReturnType<typeof setTimeout> | undefined
 
+  function showToast() {
+    toast?.classList.add('show')
+    setTimeout(() => {
+      toast?.classList.remove('show')
+    }, 1300)
+  }
+
   return function (...args: T) {
     clearTimeout(timer)
-    timer = setTimeout(() => fn(...args), delay)
+    timer = setTimeout(() => {
+      fn(...args)
+      setTimeout(showToast, 1000)
+    }, delay)
   }
 }
 
