@@ -1,7 +1,10 @@
 ---
+import { Icon } from 'astro-icon/components'
 import { Picture } from 'astro:assets'
 
 import '@styles/gradient.css'
+
+import userMenu from '@data/user-menu'
 
 import avatar from '@images/avatar.png'
 
@@ -11,7 +14,7 @@ import Button from '@ui/Button.astro'
 <nav>
   <Button icon="home" />
 
-  <div>
+  <div class="controls">
     <Button icon="gear" />
     <Button icon="console" />
     <Button class="active" icon="cloud" />
@@ -19,18 +22,41 @@ import Button from '@ui/Button.astro'
     <Button icon="more" />
   </div>
 
-  <a class="gradient" href="/">
-    <Picture
-      alt="Logo del usuario"
-      fetchpriority="high"
-      formats={['avif', 'webp']}
-      height={56}
-      loading="eager"
-      src={avatar}
-      width={56}
-    />
-  </a>
+  <div>
+    <button class="user-avatar gradient" type="button">
+      <Picture
+        alt="Logo del usuario"
+        fetchpriority="high"
+        formats={['avif', 'webp']}
+        height={56}
+        loading="eager"
+        src={avatar}
+        width={56}
+      />
+    </button>
+    <ul class="user-menu">
+      {
+        userMenu.map(({ label, icon, width, height, isPro, hasSeparator }) => (
+          <li class:list={{ separator: hasSeparator }}>
+            <button class:list={{ pro: isPro }} type="button">
+              <Icon name={icon} width={width} height={height} />
+              <span>{label}</span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </nav>
+
+<script>
+  const userAvatar = document.querySelector('.user-avatar')
+  const userMenu = document.querySelector('.user-menu')
+
+  userAvatar?.addEventListener('click', () => {
+    userMenu?.classList.toggle('open')
+  })
+</script>
 
 <style>
   nav {
@@ -41,10 +67,95 @@ import Button from '@ui/Button.astro'
     max-width: 1856px;
     margin-inline: auto;
 
-    div {
+    .controls {
       display: flex;
       align-items: center;
       gap: 32px;
+    }
+
+    .user-avatar {
+      padding: 0;
+      anchor-name: --user-menu;
+    }
+
+    .user-menu {
+      position: absolute;
+      position-anchor: --user-menu;
+      z-index: 2;
+      margin: 0;
+      top: anchor(bottom);
+      right: anchor(right);
+      translate: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: rgb(10 10 10 / 0.24);
+      backdrop-filter: blur(8px);
+      padding: 20px 24px;
+      border-radius: 8px;
+      opacity: 0;
+      scale: 0;
+      transform-origin: top right;
+      transition: opacity 80ms ease, scale 150ms ease;
+
+      &::before {
+        content: "";
+        background: linear-gradient(#47cf73 2%, #ffdd40 5%, #ae63e4 10%, #0ebeff 15%, #47cf73 20%, #66666677 25%, #66666611 100%);
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        mask:
+          linear-gradient(#000 0 0) content-box,
+          linear-gradient(#000 0 0);
+        mask-composite: exclude;
+        z-index: -1;
+      }
+
+      &.open {
+        opacity: 1;
+        scale: 1;
+      }
+
+      & .separator::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #66666633;
+        margin-bottom: 14px;
+      }
+
+      button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        font-size: 15px;
+        color: #fafafa;
+        transition: color 300ms ease;
+
+        &.pro::after {
+          content: "Pro";
+          display: inline-block;
+          color: #ffdd40;
+          font-weight: 700;
+          text-transform: uppercase;
+          translate: -1px 1px;
+        }
+
+        &:active {
+          color: #a3a3a3;
+        }
+
+        @media (any-hover: hover) {
+          &:hover {
+            color: #a3a3a3;
+          }
+        }
+      }
     }
   }
 </style>
