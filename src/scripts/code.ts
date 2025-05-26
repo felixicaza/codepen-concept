@@ -75,6 +75,11 @@ function renderPreview() {
 
   const doc = previewContent(codeState.html, codeState.css, codeState.js)
   preview.srcdoc = doc
+  preview.onload = () => {
+    if (preview?.contentWindow) {
+      (preview.contentWindow as any).eval(codeState.js)
+    }
+  }
 }
 
 const debouncedRender = debounce(renderPreview, 350)

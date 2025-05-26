@@ -41,7 +41,20 @@ function previewContent(html: string, css: string, js: string) {
     </head>
     <body>
       ${html}
-      <script type="module">${js}<\\/script>
+      <script id="user-script">${js}<\\/script>
+      <script>
+        (function() {
+          var userScript = document.getElementById('user-script');
+          if (userScript) {
+            try {
+              eval(userScript.textContent);
+            } catch(e) {
+              console.error(e);
+            }
+            userScript.remove();
+          }
+        })();
+      <\\/script>
     </body>
     </html>
   `
