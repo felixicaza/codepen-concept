@@ -39,7 +39,7 @@ const { title, description, metaRobots } = options
 
     <link as="font" crossorigin="anonymous" fetchpriority="high" href={montserrat} rel="preload" type="font/woff2" />
     <link as="font" crossorigin="anonymous" fetchpriority="high" href={krypton} rel="preload" type="font/woff2" />
-    <link as="image" fetchpriority="high" href="/images/background.png" rel="preload" type="image/png" />
+    <link as="image" fetchpriority="high" href="/images/background.avif" rel="preload" type="image/avif" />
 
     <slot name="stylesheet" />
 
@@ -118,7 +118,11 @@ const { title, description, metaRobots } = options
       content: '';
       position: absolute;
       inset: 0;
-      background: url('/images/background.png');
+      background: image-set(
+        url('/images/background.avif') type('image/avif'),
+        url('/images/background.webp') type('image/webp'),
+        url('/images/background.png') type('image/png')
+      );
       opacity: 0.034;
       z-index: -1;
     }
