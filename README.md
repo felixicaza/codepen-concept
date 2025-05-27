@@ -1,26 +1,42 @@
-[![Codepen Concept Design](./assets/codepen-concept.jpg)](https://dribbble.com/shots/25090422-Codepen-Concept-Design)
+<a href="https://dribbble.com/shots/25090422-Codepen-Concept-Design">
+  <img src="./assets/codepen-concept.jpg" alt="Codepen Concept Design" style="aspect-ratio: 16/9; width: 100%; height: auto; object-fit: cover" />
+</a>
 
 # ✨ Codepen Concept Design
 
-Este repositorio contiene el desarrollo del diseño experimental de Codepen, creado por [**BlurSoul**](https://dribbble.com/BlurSoul), titulado **"Codepen Concept Design"**. Este repositorio fue generado utilizando el [Boilerplate de UXCorpRangel](https://github.com/UXCorpRangel/boilerplate).
+Este repositorio contiene el desarrollo de un concepto visual experimental inspirado en [Codepen](https://codepen.io/), basado en el diseño original de [**BlurSoul en Dribbble**](https://dribbble.com/BlurSoul) titulado **Codepen Concept Design**. El objetivo principal de este proyecto es recrear y adaptar una propuesta visual moderna y minimalista para la interfaz de Codepen, explorando nuevas formas de interacción y presentación de código en la web.
 
-> [!WARNING]
-> Este proyecto aún está en desarrollo.
-
-## Captura de Pantalla
+## 📷 Captura de Pantalla
 
 [![Quadrants CSS Design](./assets/codepen-concept-screenshot.jpeg)](https://dribbble.com/shots/25090422-Codepen-Concept-Design)
 
 Enlace del diseño:
 https://dribbble.com/shots/25090422-Codepen-Concept-Design
 
-## ⭐ Características
+## 🔥 Características
 
-- **Proyecto de Astro**: Implementado con el framework Astro, lo que permite optimizar el rendimiento y ofrecer una experiencia de desarrollo flexible.
-- **HTML y CSS puro**: El diseño está compuesto únicamente de HTML y CSS, con muy poco JavaScript adicional.
-- **Efectos visuales**: Incluye degradados y líneas minimalistas que convergen en un punto central, generando un efecto moderno y atractivo.
+- 💎 **Diseño Moderno**: Inspirado en el concepto de Codepen, con un enfoque en la simplicidad y la elegancia.
+- 🧑‍💻 **Interactividad**: Aunque el proyecto utiliza principalmente HTML y CSS, se han implementado algunos efectos visuales para mejorar la experiencia del usuario.
+- 🌿 **Minimalista**: Utiliza un enfoque de diseño limpio, lo que permite que el contenido destaque.
+- 🎨 **Paleta de colores armónica**: El diseño emplea una selección de colores coherente y agradable a la vista.
 
-## ⬇️ Instalación
+## 🚀 Stack de desarrollo
+
+- **[Astro](https://astro.build/)**: Este proyecto está construido con Astro, un generador de sitios estáticos que permite crear aplicaciones web rápidas y eficientes.
+- **[HTML](https://lenguajehtml.com/html/) y [CSS](https://lenguajecss.com/css/)**: El diseño esencial se basa en HTML y CSS, utilizando técnicas modernas de diseño web.
+- **[TypeScript](https://www.typescriptlang.org/)**: Utilizado para mejorar la experiencia de desarrollo.
+- **[Firebase](https://firebase.google.com/)**: Este proyecto se despliega automáticamente con [GitHub Actions](https://github.com/features/actions) y está alojado en [Firebase Hosting](https://firebase.google.com/products/hosting), lo que permite una implementación rápida y segura de aplicaciones web estáticas.
+
+## 🌐 Soporte de navegador
+
+| <center><img src="./assets/chrome.svg" alt="Chrome" width="40" /></center> | <center><img src="./assets/edge.svg" alt="Edge" width="40" /></center> | <center><img src="./assets/firefox.svg" alt="Firefox" width="40" /></center> | <center><img src="./assets/safari.svg" alt="Safari" width="40" /></center> |
+--- | --- | --- | --- |
+Latest ✅ | Latest ✅ | Latest ⚠️ | Latest ⚠️ |
+
+- ⚠️ Firefox actualmente no soporta [`View Transitions`](https://caniuse.com/view-transitions) ni [`Anchor Positioning`](https://caniuse.com/css-anchor-positioning), por lo que algunas animaciones y funcionalidades pueden no funcionar como se espera.
+- ⚠️ Safari no soporta [`Anchor Positioning`](https://caniuse.com/css-anchor-positioning), por lo que algunas funcionalidades pueden no funcionar como se espera.
+
+## ⬇️ Desarrollo en local
 
 1. Clona el repositorio:
 
@@ -46,11 +62,15 @@ pnpm install
 pnpm run dev
 ```
 
-5. Abre el navegador y ve a `http://localhost:4321`.
+5. Abre el navegador y ve a:
+
+```
+http://localhost:4321
+```
 
 ## 🤝 Contribuir
 
-Si deseas contribuir a este proyecto, puedes hacerlo leyendo la [Guía de Contribución](./CONTRIBUTING.md).
+Si deseas contribuir a este proyecto, por favor lee la [Guía de Contribución](./CONTRIBUTING.md).
 
 ## 📄 Licencia
 
