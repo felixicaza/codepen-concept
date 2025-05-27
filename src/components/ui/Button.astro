@@ -3,13 +3,14 @@ import { Icon } from 'astro-icon/components'
 
 interface Props {
   icon: string
+  label: string
   class?: string
 }
 
-const { icon, class: className } = Astro.props as Props
+const { icon, class: className, label } = Astro.props as Props
 ---
 
-<button class:list={['gradient', className]} type="button">
+<button class:list={['gradient', className]} type="button" aria-label={label}>
   <Icon name={icon} size={28} />
 </button>
 

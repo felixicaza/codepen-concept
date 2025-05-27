@@ -5,21 +5,21 @@ import { Icon } from 'astro-icon/components'
 <div class="editor-container">
   <div class="tools-container">
     <div class="editor-tools">
-      <button type="button" data-tab="html" class="active">
+      <button type="button" data-tab="html" class="active" aria-label="HTML Editor">
         <Icon name="container/html" size={20} />
       </button>
-      <button type="button" data-tab="css">
+      <button type="button" data-tab="css" aria-label="CSS Editor">
         <Icon name="container/css" size={20} />
       </button>
-      <button type="button" data-tab="js">
+      <button type="button" data-tab="js" aria-label="JavaScript Editor">
         <Icon name="container/javascript" size={20} />
       </button>
     </div>
     <div class="options-tools">
-      <button type="button">
+      <button type="button" aria-label="Editor Settings">
         <Icon name="container/settings" size={16} />
       </button>
-      <button type="button">
+      <button type="button" aria-label="Editor Options">
         <Icon height={4} name="container/options" width={18} />
       </button>
     </div>
