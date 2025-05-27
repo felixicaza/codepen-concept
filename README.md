@@ -2,6 +2,11 @@
   <img src="./assets/codepen-concept.jpg" alt="Codepen Concept Design" style="aspect-ratio: 16/9; width: 100%; height: auto; object-fit: cover" />
 </a>
 
+[![Lighthouse Performance Badge](./assets/lighthouse_performance.svg)](https://github.com/felixicaza/codepen-concept)
+[![Lighthouse Accessibility Badge](./assets/lighthouse_accessibility.svg)](https://github.com/felixicaza/codepen-concept)
+[![Lighthouse Best Practices Badge](./assets/lighthouse_best-practices.svg)](https://github.com/felixicaza/codepen-concept)
+[![Lighthouse SEO Badge](./assets/lighthouse_seo.svg)](https://github.com/felixicaza/codepen-concept)
+
 # ✨ Codepen Concept Design
 
 Este repositorio contiene el desarrollo de un concepto visual experimental inspirado en [Codepen](https://codepen.io/), basado en el diseño original de [**BlurSoul en Dribbble**](https://dribbble.com/BlurSoul) titulado **Codepen Concept Design**. El objetivo principal de este proyecto es recrear y adaptar una propuesta visual moderna y minimalista para la interfaz de Codepen, explorando nuevas formas de interacción y presentación de código en la web.
