@@ -12,9 +12,9 @@ import html from '@data/html'
 import css from '@data/css'
 import javascript from '@data/javascript'
 
-const codeButtons = document.querySelector('.code-tools')
-const buttons = document.querySelectorAll('.code-tools button')
-const codeElement = document.querySelector('.code')
+const editorButtons = document.querySelector('.editor-tools')
+const buttons = document.querySelectorAll('.editor-tools button')
+const editorElement = document.querySelector('.editor')
 const preview = document.querySelector('#preview') as HTMLIFrameElement
 const toast = document.querySelector('.toast')
 
@@ -37,18 +37,18 @@ const docs = {
   js: jsCode
 }
 
-const codeState = { ...docs }
+const editorState = { ...docs }
 
 function getExtension(tab: string) {
   return extensions[tab as keyof typeof extensions]
 }
 
 function getDoc(tab: string) {
-  return codeState[tab as keyof typeof codeState]
+  return editorState[tab as keyof typeof editorState]
 }
 
 function setDoc(tab: string, value: string) {
-  codeState[tab as keyof typeof codeState] = value
+  editorState[tab as keyof typeof editorState] = value
 }
 
 function debounce<T extends any[]>(fn: (...args: T) => void, delay: number | undefined) {
@@ -73,21 +73,21 @@ function debounce<T extends any[]>(fn: (...args: T) => void, delay: number | und
 function renderPreview() {
   if (!preview) return
 
-  const doc = previewContent(codeState.html, codeState.css, codeState.js)
+  const doc = previewContent(editorState.html, editorState.css, editorState.js)
   preview.srcdoc = doc
   preview.onload = () => {
     if (preview?.contentWindow) {
-      (preview.contentWindow as any).eval(codeState.js)
+      (preview.contentWindow as any).eval(editorState.js)
     }
   }
 }
 
 const debouncedRender = debounce(renderPreview, 350)
 
-if (codeElement) {
+if (editorElement) {
   editor = new EditorView({
     doc: html,
-    parent: codeElement,
+    parent: editorElement,
     extensions: [
       EditorView.lineWrapping,
       basicSetup,
@@ -104,7 +104,7 @@ if (codeElement) {
 
   renderPreview()
 
-  codeButtons?.addEventListener('click', (event) => {
+  editorButtons?.addEventListener('click', (event) => {
     const { target } = event
 
     const btn = (target as Element).closest('button[data-tab]')

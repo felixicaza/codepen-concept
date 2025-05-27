@@ -1,5 +1,6 @@
 .cm-editor {
   height: 100%;
+  cursor: text
 }
 
 .cm-scroller::-webkit-scrollbar {

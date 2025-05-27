@@ -2,9 +2,9 @@
 import { Icon } from 'astro-icon/components'
 ---
 
-<div class="code-container">
+<div class="editor-container">
   <div class="tools-container">
-    <div class="code-tools">
+    <div class="editor-tools">
       <button type="button" data-tab="html" class="active">
         <Icon name="container/html" size={20} />
       </button>
@@ -24,15 +24,15 @@ import { Icon } from 'astro-icon/components'
       </button>
     </div>
   </div>
-  <div class="code"></div>
+  <div class="editor"></div>
 </div>
 
 <script>
-  import '@scripts/code'
+  import '@scripts/editor'
 </script>
 
 <style>
-  .code-container {
+  .editor-container {
     display: grid;
     grid-template-rows: auto 1fr;
     gap: 16px;
@@ -46,7 +46,7 @@ import { Icon } from 'astro-icon/components'
       align-items: center;
       justify-content: space-between;
 
-      .code-tools {
+      .editor-tools {
         display: flex;
         align-items: center;
         gap: 24px;
@@ -101,7 +101,7 @@ import { Icon } from 'astro-icon/components'
       }
     }
 
-    .code {
+    .editor {
       overflow-y: inherit;
     }
   }
