@@ -15,10 +15,10 @@ jobs:
             node-version: [22.x]
 
       steps:
-         - uses: actions/checkout@v4
+         - uses: actions/checkout@v5
 
          - name: Use Node.js ${{ matrix.node-version }}
-           uses: actions/setup-node@v4.4.0
+           uses: actions/setup-node@v5
            with:
               node-version: ${{ matrix.node-version }}
 
@@ -34,7 +34,7 @@ jobs:
            run: pnpm build
 
          - name: Deploy to Firebase Hosting
-           uses: FirebaseExtended/action-hosting-deploy@v0.9.0
+           uses: FirebaseExtended/action-hosting-deploy@v0.10.0
            with:
               repoToken: ${{ secrets.GITHUB_TOKEN }}
               firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_CODEPEN_CONCEPT }}
