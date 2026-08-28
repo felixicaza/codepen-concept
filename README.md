@@ -1,3 +1,5 @@
+
+
 <a href="https://dribbble.com/shots/25090422-Codepen-Concept-Design">
   <img src="./assets/codepen-concept.jpg" alt="Codepen Concept Design" style="aspect-ratio: 16/9; width: 100%; height: auto; object-fit: cover" />
 </a>
@@ -79,7 +81,7 @@ Si deseas contribuir a este proyecto, por favor lee la [Guía de Contribución](
 
 ## 📄 Licencia
 
-Este proyecto utiliza la Licencia MIT. Consulte el [Archivo de Licencia](./LICENCE) para obtener más información.
+Este proyecto utiliza la Licencia MIT. Consulte el [Archivo de Licencia](./LICENSE) para obtener más información.
 
 ---
 
